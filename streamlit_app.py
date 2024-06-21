@@ -1,30 +1,34 @@
-import altair as alt
-import numpy as np
-import pandas as pd
 import streamlit as st
 
-num_points = st.slider("Number of points in spiraaaaal", 1, 10000, 1100)
-num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
+st.title("Rapport Auditif")
 
-indices = np.linspace(0, 1, num_points)
-theta = 2 * np.pi * num_turns * indices
-radius = indices
+# Informations générales
+age = st.number_input("Âgé(e) de", min_value=0, max_value=120, value=25, step=1)
 
-x = radius * np.cos(theta)
-y = radius * np.sin(theta)
+surdite_type = st.selectbox("Présente une surdité de", 
+                            ["transmission", "perception", "mixte"])
 
-df = pd.DataFrame({
-    "x": x,
-    "y": y,
-    "idx": indices,
-    "rand": np.random.randn(num_points),
-})
+surdite_gravite = st.selectbox("Gravité de la surdité", 
+                               ["légere", "moyenne", "severe", "profonde"])
 
-st.altair_chart(alt.Chart(df, height=700, width=700)
-    .mark_point(filled=True)
-    .encode(
-        x=alt.X("x", axis=None),
-        y=alt.Y("y", axis=None),
-        color=alt.Color("idx", legend=None, scale=alt.Scale()),
-        size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
-    ))
+surdite_lateralite = st.selectbox("Latéralité de la surdité", 
+                                  ["unilatérale", "bilatérale"])
+
+# Proposition d'appareils
+appareils_type = st.selectbox("Nous avons proposé des appareils", 
+                              ["contours d'oreilles", "RIC", "INTRA"])
+
+marque = st.selectbox("de la marque", 
+                      ["GN Resound", "GN Interton", "Earnet"])
+
+embouts = st.text_input("avec des embouts")
+
+st.write("### Conclusion")
+
+st.write("Les appareils auditifs mis à l'essai apportent un excellent gain d'intelligibilité de la parole et sont très bien acceptés.")
+
+st.write("Nous contrôlerons régulièrement ses seuils sans appareils et son gain avec appareils pour assurer un bon entretien de ses aides auditives et une bonne efficacité de l'adaptation prothétique.")
+
+# Ajouter un bouton pour imprimer
+st.write("\n\n")
+st.button("Imprimer ce rapport")
