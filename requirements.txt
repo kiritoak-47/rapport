@@ -1,4 +1,4 @@
 altair
-pdf
 pandas
 streamlit
+fpdf
