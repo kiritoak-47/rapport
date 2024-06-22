@@ -5,12 +5,12 @@
     "codespaces": {
       "openFiles": [
         "README.md",
-        "rapport_auditif.py"
+        "streamlit_app.py"
       ]
     }
   },
   "postAttachCommand": {
-    "server": "streamlit run rapport_auditif.py --server.enableCORS false --server.enableXsrfProtection false"
+    "server": "streamlit run streamlit_app.py --server.enableCORS false --server.enableXsrfProtection false"
   },
   "portsAttributes": {
     "8501": {
