@@ -68,7 +68,13 @@ embouts = st.selectbox("Embouts",
                       ["embouts", "micro embouts"])
 
 remarque = st.selectbox("Remarque",
-                        ["Phrase 1", "Phrase 2" , "Phrase 3"])
+                        ["Les résultats du test audiométrique montrent une amélioration significative de l'audition du patient avec l'appareil auditif. Les niveaux d'appareillage sont ajustés pour maximiser le confort auditif tout en maintenant une excellente clarté sonore.", 
+                         "Le test de réduction du bruit a montré que l'appareil auditif offre une réduction efficace des bruits ambiants tout en permettant une clarté de parole optimale. Le patient a remarqué une amélioration notable de la qualité sonore dans les environnements bruyants." ,
+                         "Le patient a bien réagi à l'appareil auditif dès la première utilisation. Il a noté une amélioration significative de son audition et s'est rapidement adapté au nouvel appareil. Aucun problème de confort ou de fonctionnement n'a été signalé." ,
+                         "Après le teste d'appareil, le patient se dit très satisfait de l'appareil auditif. Elle a remarqué une meilleure compréhension des conversations en milieu bruyant et s'est bien habituée aux réglages automatiques. Un léger ajustement de volume a été effectué pour un confort optimal." ,
+                         "La fonctionnalité de suppression des acouphènes a été activée et configurée avec succès, offrant un soulagement significatif au patient" ,
+                         "Le test de réglage en milieu extérieur a montré que les appareils auditifs réduisent efficacement le bruit, tout en maintenant une bonne clarté de la parole." ,
+                         "Le mode de directionnalité du microphone a été ajusté pour se concentrer sur les sources sonores frontales, améliorant la clarté des conversations en face à face"])
 
 if st.button("Générer le rapport PDF"):
     pdf = create_pdf(nom_prenom, age, surdite_type, surdite_gravite, surdite_lateralite, appareils_type, marque, embouts, remarque)
