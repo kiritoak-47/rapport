@@ -28,7 +28,7 @@ def create_pdf(nom_prenom, age, surdite_type, surdite_gravite, surdite_lateralit
         f"de la marque {marque} avec des {embouts}.\n\n"
         "Les appareils auditifs mis à l'essai apportent un excellent gain d'intelligibilité de la parole "
         "et sont très bien acceptés.\n\n"
-        f"Remarque :\n {remarque}\n\n"
+        f"Observation :\n {remarque}\n\n"
         "Nous contrôlerons régulièrement ses seuils sans appareils et son gain avec appareils pour assurer "
         "un bon entretien de ses aides auditives et une bonne efficacité de l'adaptation prothétique.\n\n"
         "Donc il s'agit d'un appareillage concluant."
@@ -67,7 +67,7 @@ marque = st.selectbox("Marque",
 embouts = st.selectbox("Embouts", 
                       ["embouts", "micro embouts"])
 
-remarque = st.selectbox("Remarque",
+remarque = st.selectbox("Observation",
                         ["Les résultats du test audiométrique montrent une amélioration significative de l'audition du patient avec l'appareil auditif. Les niveaux d'appareillage sont ajustés pour maximiser le confort auditif tout en maintenant une excellente clarté sonore.", 
                          "Le test de réduction du bruit a montré que l'appareil auditif offre une réduction efficace des bruits ambiants tout en permettant une clarté de parole optimale. Le patient a remarqué une amélioration notable de la qualité sonore dans les environnements bruyants." ,
                          "Le patient a bien réagi à l'appareil auditif dès la première utilisation. Il a noté une amélioration significative de son audition et s'est rapidement adapté au nouvel appareil. Aucun problème de confort ou de fonctionnement n'a été signalé." ,
