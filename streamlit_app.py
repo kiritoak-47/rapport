@@ -78,7 +78,7 @@ remarque = st.selectbox("Observation",
                          "Le test de réglage en milieu extérieur a montré que les appareils auditifs réduisent efficacement le bruit, tout en maintenant une bonne clarté de la parole." ,
                          "Le mode de directionnalité du microphone a été ajusté pour se concentrer sur les sources sonores frontales, améliorant la clarté des conversations en face à face"])
 
-if st.button("Générer le rapport PDF"):
+if st.button("Générer le rapport"):
     if nom_prenom and age and surdite_type and surdite_gravite and surdite_lateralite and appareils_type and marque and embouts and remarque:
         pdf = create_pdf(nom_prenom, age, surdite_type, surdite_gravite, surdite_lateralite, appareils_type, marque, embouts, remarque)
         pdf_download_link = get_pdf_download_link(pdf, "rapport_auditif.pdf")
