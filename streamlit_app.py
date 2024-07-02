@@ -28,7 +28,7 @@ def create_pdf(nom_prenom, age, surdite_type, surdite_gravite, surdite_lateralit
         f"de la marque {marque} avec des {embouts}.\n\n"
         "Les appareils auditifs mis à l'essai apportent un excellent gain d'intelligibilité de la parole "
         "et sont très bien acceptés.\n\n"
-        f"Remarque : {remarque}\n\n"
+        f"Remarque :\n {remarque}\n\n"
         "Nous contrôlerons régulièrement ses seuils sans appareils et son gain avec appareils pour assurer "
         "un bon entretien de ses aides auditives et une bonne efficacité de l'adaptation prothétique.\n\n"
         "Donc il s'agit d'un appareillage concluant."
