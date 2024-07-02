@@ -77,6 +77,9 @@ remarque = st.selectbox("Remarque",
                          "Le mode de directionnalité du microphone a été ajusté pour se concentrer sur les sources sonores frontales, améliorant la clarté des conversations en face à face"])
 
 if st.button("Générer le rapport PDF"):
-    pdf = create_pdf(nom_prenom, age, surdite_type, surdite_gravite, surdite_lateralite, appareils_type, marque, embouts, remarque)
-    pdf_download_link = get_pdf_download_link(pdf, "rapport_auditif.pdf")
-    st.markdown(pdf_download_link, unsafe_allow_html=True)
+    if nom_prenom and age and surdite_type and surdite_gravite and surdite_lateralite and appareils_type and marque and embouts and remarque:
+        pdf = create_pdf(nom_prenom, age, surdite_type, surdite_gravite, surdite_lateralite, appareils_type, marque, embouts, remarque)
+        pdf_download_link = get_pdf_download_link(pdf, "rapport_auditif.pdf")
+        st.markdown(pdf_download_link, unsafe_allow_html=True)
+    else:
+        st.error("Tous les champs doivent être remplis.")
