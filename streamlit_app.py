@@ -7,6 +7,7 @@ import base64
 class PDF(FPDF):
     def header(self):
         self.set_font('Arial', 'B', 12)
+        self.cell(0, 20, '', 0, 1)  
         self.cell(0, 10, 'Rapport Auditif', 0, 1, 'C')
 
     def chapter_title(self, title):
@@ -15,7 +16,8 @@ class PDF(FPDF):
 
     def chapter_body(self, body):
         self.set_font('Arial', '', 12)
-        self.multi_cell(0, 10, body)
+        self.set_x((210 - 150) / 2)  # Center the text
+        self.multi_cell(150, 10, body)  # Adjust the width of the multi-cell
         self.ln()
 
 def create_pdf(nom_prenom, age, surdite_type, surdite_gravite, surdite_lateralite, appareils_type, marque, embouts, remarque):
