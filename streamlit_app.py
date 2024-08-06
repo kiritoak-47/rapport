@@ -55,13 +55,13 @@ surdite_type = st.selectbox("Type de surdité",
                             ["transmission", "perception", "mixte"])
 
 surdite_gravite = st.selectbox("Niveau de surdité", 
-                               ["légere", "moyenne", "severe", "profonde"])
+                               ["légere", "moyenne", "severe", "profonde", "moyenne a severe", "severe a profonde"])
 
 surdite_lateralite = st.selectbox("Coté", 
                                   ["unilatérale", "bilatérale"])
 
 appareils_type = st.selectbox("Type d'appareils", 
-                              ["contours d'oreilles", "RIC", "INTRA"])
+                              ["contours d'oreilles", "contours d'oreilles a ecouteur déporté", "Intra-auriculaire"])
 
 marque = st.selectbox("Marque", 
                       ["GN Resound", "GN Interton", "Earnet"])
